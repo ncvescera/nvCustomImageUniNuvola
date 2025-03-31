@@ -58,7 +58,7 @@ jobs:
           push-to-registry: true
       
       - name: Update README
-        run: echo "```${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}```" >> README.md && echo "${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}"
+        run: echo "$REGISTRY/$IMAGE_NAME" >> README.md && echo "HELLO WORLD !!" >> README.md
         
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
