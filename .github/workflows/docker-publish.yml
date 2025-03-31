@@ -56,3 +56,13 @@ jobs:
           subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
+      
+      - name: Update README
+        run: echo "```{{ steps.meta.outputs.tags }}```" >> README.md
+        
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+            message: Update README.md
+            committer_name: GitHub Actions
+            committer_email: 41898282+github-actions[bot]@users.noreply.github.com
