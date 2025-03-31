@@ -58,7 +58,7 @@ jobs:
           push-to-registry: true
       
       - name: Update README
-        run: echo "```$DOCKER_METADATA_OUTPUT_TAGS```" >> README.md
+        run: echo -e "\n $DOCKER_METADATA_OUTPUT_TAGS \n" >> README.md && echo -e "```cacca```" >> README.md
         
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
