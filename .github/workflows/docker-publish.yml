@@ -58,7 +58,7 @@ jobs:
           push-to-registry: true
       
       - name: Update README
-        run: echo "$REGISTRY/$IMAGE_NAME" >> README.md && echo "HELLO WORLD !!" >> README.md
+        run: echo "```$DOCKER_METADATA_OUTPUT_TAGS```" >> README.md
         
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
